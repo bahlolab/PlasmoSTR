@@ -10,3 +10,7 @@ https://shiny.wehi.edu.au/han.ji/PlasmoSTR/
 
 https://jiruhan.shinyapps.io/PlasmoSTR/ (25 Active Hours Per Month)
 
+
+The main R script of the multivariable logistic regression modeling for measurement and prediction of the quality of STRs is available on the Workflow.R, which can be applied to other species.
+
+
