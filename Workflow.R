@@ -62,7 +62,7 @@ colnames(dist_SNP9)[2] <- "PCvalue"
 dist_SNP10 <- read.csv("SNP/SNP_PCAvalue/PC10.csv")
 colnames(dist_SNP10)[2] <- "PCvalue"
 #########################################STR Motif count for each sample each loci#########################################
-#Get the STR genotype data from the HipSTR output and qccording to the genotype allele and the reference motif get the motif count for each sample each loci.
+#Get the STR genotype data from the HipSTR output and according to the genotype allele and the reference motif get the motif count for each sample each loci.
 #23146 STR loci   
 #174 samples
 motif <- read.csv("STR/Motif_count.csv")
