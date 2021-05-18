@@ -88,6 +88,7 @@ head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_1_T.csv",row.names = FALSE)
 
 #Test the correlation for each STR loci in both PC1 and PC2, and choose the maximum one
+
 #PC1-PC2
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
@@ -103,13 +104,10 @@ correlation <- lapply(1:ncol(motif), function(i){
   test <- max(test1,test2,na.rm = TRUE)
   test
 })
-
-
 correlation <- do.call(rbind,correlation)
 correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_2_T.csv",row.names = FALSE)
-
 
 #PC1-PC3
 correlation <- lapply(1:ncol(motif), function(i){
@@ -138,7 +136,6 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_3_T.csv",row.names = FALSE)
 
-
 #PC1-PC4
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
@@ -166,15 +163,10 @@ correlation <- lapply(1:ncol(motif), function(i){
   test <- max(test1,test2,test3,test4,na.rm = TRUE)
   test
 })
-
-
 correlation <- do.call(rbind,correlation)
 correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_4_T.csv",row.names = FALSE)
-
-
-
 
 #PC1-PC5
 correlation <- lapply(1:ncol(motif), function(i){
@@ -207,15 +199,10 @@ correlation <- lapply(1:ncol(motif), function(i){
   test <- max(test1,test2,test3,test4,test5,na.rm = TRUE)
   test
 })
-
-
 correlation <- do.call(rbind,correlation)
 correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_5_T.csv",row.names = FALSE)
-
-
-
 
 #PC1-PC6
 correlation <- lapply(1:ncol(motif), function(i){
@@ -254,13 +241,10 @@ correlation <- lapply(1:ncol(motif), function(i){
   test <- max(test1,test2,test3,test4,test5,test6,na.rm = TRUE)
   test
 })
-
-
 correlation <- do.call(rbind,correlation)
 correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_6_T.csv",row.names = FALSE)
-
 
 #PC1-PC7
 correlation <- lapply(1:ncol(motif), function(i){
@@ -303,15 +287,10 @@ correlation <- lapply(1:ncol(motif), function(i){
   test <- max(test1,test2,test3,test4,test5,test6,test7,na.rm = TRUE)
   test
 })
-
-
 correlation <- do.call(rbind,correlation)
 correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_7_T.csv",row.names = FALSE)
-
-
-
 
 #PC1-PC8
 correlation <- lapply(1:ncol(motif), function(i){
@@ -360,13 +339,10 @@ correlation <- lapply(1:ncol(motif), function(i){
   test <- max(test1,test2,test3,test4,test5,test6,test7,test8,na.rm = TRUE)
   test
 })
-
-
 correlation <- do.call(rbind,correlation)
 correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_8_T.csv",row.names = FALSE)
-
 
 #PC1-PC9
 correlation <- lapply(1:ncol(motif), function(i){
@@ -419,14 +395,10 @@ correlation <- lapply(1:ncol(motif), function(i){
   test <- max(test1,test2,test3,test4,test5,test6,test7,test8,test9,na.rm = TRUE)
   test
 })
-
-
 correlation <- do.call(rbind,correlation)
 correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_9_T.csv",row.names = FALSE)
-
-
 
 #PC1-PC10
 correlation <- lapply(1:ncol(motif), function(i){
@@ -484,12 +456,12 @@ correlation <- lapply(1:ncol(motif), function(i){
   test <- max(test1,test2,test3,test4,test5,test6,test7,test8,test9,test10,na.rm = TRUE)
   test
 })
-
 correlation <- do.call(rbind,correlation)
 correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_TRUE/correlation_STR_10_T.csv",row.names = FALSE)
 ####FALSE correlation (permutation test where the population labels were permuted between samples to derive a null distribution to determine an appropriate correlation threshold that maximised the difference between high and low quality STRs. )
+#PC1
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
@@ -505,7 +477,7 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_FALSE_Permutationtest/correlation_STR_1_F.csv",row.names = FALSE)
 
-#PC2
+##PC1-PC2
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
@@ -528,7 +500,7 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_FALSE_Permutationtest/correlation_STR_2_F.csv",row.names = FALSE)
 
-#PC3
+##PC1-PC3
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
@@ -556,10 +528,7 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_FALSE_Permutationtest/correlation_STR_3_F.csv",row.names = FALSE)
 
-
-
-
-#PC4
+##PC1-PC4
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
@@ -593,11 +562,7 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_FALSE_Permutationtest/correlation_STR_4_F.csv",row.names = FALSE)
 
-
-
-
-
-#PC5
+##PC1-PC5
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
@@ -638,8 +603,7 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_FALSE_Permutationtest/correlation_STR_5_F.csv",row.names = FALSE)
 
-
-#PC6
+##PC1-PC6
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
@@ -664,7 +628,6 @@ correlation <- lapply(1:ncol(motif), function(i){
   test4 <- cor(dist_SNP_STR_4$PCvalue, dist_SNP_STR_4$STRRepeat,method = "spearman",use = "pairwise.complete.obs")
   test4 <- test4*test4
   
-  
   #PC5
   dist_SNP_STR_5 <- dist_SNP5 %>% 
     left_join(dist_STR,by="Sample")
@@ -686,11 +649,7 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_FALSE_Permutationtest/correlation_STR_6_F.csv",row.names = FALSE)
 
-
-
-
-
-#PC7
+##PC1-PC7
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
@@ -744,9 +703,7 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_FALSE_Permutationtest/correlation_STR_7_F.csv",row.names = FALSE)
 
-
-
-#PC8
+##PC1-PC8
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
@@ -806,10 +763,7 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_FALSE_Permutationtest/correlation_STR_8_F.csv",row.names = FALSE)
 
-
-
-
-#PC9
+##PC1-PC9
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
@@ -876,7 +830,7 @@ correlation_all <- data.frame(STRid=motif_new$STRid,correlation)
 head(correlation_all)
 write.csv(correlation_all,"SNP_STR_Correlation/Correlation_FALSE_Permutationtest/correlation_STR_9_F.csv",row.names = FALSE)
 
-#PC10
+##PC1-PC10
 correlation <- lapply(1:ncol(motif), function(i){
   dist_STR <- data.frame(Sample=rownames(motif),STRRepeat=motif[,i])
   reorder_STR <- dist_STR[sample(nrow(dist_STR)),1]
