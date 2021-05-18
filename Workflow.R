@@ -43,23 +43,23 @@ library(ROCR)
 #SNP PCA PC1 ~ PC10 value
 dist_SNP1 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
 colnames(dist_SNP1)[2] <- "PCvalue"
-dist_SNP2 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
+dist_SNP2 <- read.csv("SNP/SNP_PCAvalue/PC2.csv")
 colnames(dist_SNP2)[2] <- "PCvalue"
-dist_SNP3 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
+dist_SNP3 <- read.csv("SNP/SNP_PCAvalue/PC3.csv")
 colnames(dist_SNP3)[2] <- "PCvalue"
-dist_SNP4 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
+dist_SNP4 <- read.csv("SNP/SNP_PCAvalue/PC4.csv")
 colnames(dist_SNP4)[2] <- "PCvalue"
-dist_SNP5 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
+dist_SNP5 <- read.csv("SNP/SNP_PCAvalue/PC5.csv")
 colnames(dist_SNP5)[2] <- "PCvalue"
-dist_SNP6 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
+dist_SNP6 <- read.csv("SNP/SNP_PCAvalue/PC6.csv")
 colnames(dist_SNP6)[2] <- "PCvalue"
-dist_SNP7 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
+dist_SNP7 <- read.csv("SNP/SNP_PCAvalue/PC7.csv")
 colnames(dist_SNP7)[2] <- "PCvalue"
-dist_SNP8 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
+dist_SNP8 <- read.csv("SNP/SNP_PCAvalue/PC8.csv")
 colnames(dist_SNP8)[2] <- "PCvalue"
-dist_SNP9 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
+dist_SNP9 <- read.csv("SNP/SNP_PCAvalue/PC9.csv")
 colnames(dist_SNP9)[2] <- "PCvalue"
-dist_SNP10 <- read.csv("SNP/SNP_PCAvalue/PC1.csv")
+dist_SNP10 <- read.csv("SNP/SNP_PCAvalue/PC10.csv")
 colnames(dist_SNP10)[2] <- "PCvalue"
 #########################################STR Motif count for each sample each loci#########################################
 #Get the STR genotype data from the HipSTR output and qccording to the genotype allele and the reference motif get the motif count for each sample each loci.
