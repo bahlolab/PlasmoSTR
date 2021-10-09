@@ -122,8 +122,8 @@ Pv_PCA <- read.csv("Data/PCA_Pv.csv")
 str_R <- read.csv("Data/STR_Pf3K_Rshiny.csv")
 
 #STR model parameter pf and pv
-Pf_model_parameter <- read.csv("Data/STR_Model_Parameter_Pf.csv")
-Pv_model_parameter <- read.csv("Data/STR_Model_Parameter_Pv.csv")
+#Pf_model_parameter <- read.csv("Data/STR_Model_Parameter_Pf.csv")
+#Pv_model_parameter <- read.csv("Data/STR_Model_Parameter_Pv.csv")
 
 
 
@@ -445,10 +445,10 @@ server <- function(input, output,session) {
     updateNavbarPage(session, "panels_main", newvalue)
   }) 
   
-  observeEvent(input$link_to_tabpanel_STR_parameter,{
-    newvalue <- "STR_Model_Parameter"
-    updateNavbarPage(session, "panels_main", newvalue)
-  }) 
+ # observeEvent(input$link_to_tabpanel_STR_parameter,{
+  #  newvalue <- "STR_Model_Parameter"
+ #   updateNavbarPage(session, "panels_main", newvalue)
+ # }) 
   
   
   observeEvent(input$link_to_tabpanel_TopPfs,{
