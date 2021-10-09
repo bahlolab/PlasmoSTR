@@ -482,11 +482,11 @@ server <- function(input, output,session) {
   str_Rshiny = str_R %>% 
     dplyr::rename("# Repeatcopies (Pf3D7)" = "Repeatcopies")
   
-  Pf_model <- Pf_model_parameter %>% 
-    dplyr::rename("STR Locus (Pf3D7)" = "STRLocus")
+  #Pf_model <- Pf_model_parameter %>% 
+  #  dplyr::rename("STR Locus (Pf3D7)" = "STRLocus")
   
-  Pv_model <- Pv_model_parameter %>% 
-    dplyr::rename("STR Locus (PvP01)" = "STRLocus")
+  #Pv_model <- Pv_model_parameter %>% 
+  #  dplyr::rename("STR Locus (PvP01)" = "STRLocus")
   
 
   db <- reactive({
@@ -572,30 +572,30 @@ server <- function(input, output,session) {
   
   
   #Pf and Pv model
-  db_model <- reactive({
-    require(input$ViewM7)
-    if (input$datasetMs == "Pf") {
-      Pf_model
-    } else if (input$datasetMs == "Pv") {
-      Pv_model
-    } 
-  })
+  #db_model <- reactive({
+ #   require(input$ViewM7)
+  #  if (input$datasetMs == "Pf") {
+  #    Pf_model
+  #  } else if (input$datasetMs == "Pv") {
+ #     Pv_model
+ #   } 
+ # })
   
   
-  data_model <- eventReactive(input$ViewM7, {
-    db_model()
-  })
+  #data_model <- eventReactive(input$ViewM7, {
+ #   db_model()
+ # })
   
-  output$viewMs <- DT::renderDataTable(
-    DT::datatable(data_model(),caption = 'Table: This is genome-wide high-quality STR multivariable logistic regression model parameter.',
-                  filter = 'top', 
-                  extensions = 'Buttons',
-                  options = list(dom = 'Blfrtip',
-                                 buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
-                                 lengthMenu = list(c(10,25,50,-1),
-                                                   c(10,25,50,"All")))
-    )
-  )
+ # output$viewMs <- DT::renderDataTable(
+ #   DT::datatable(data_model(),caption = 'Table: This is genome-wide high-quality STR multivariable logistic regression model parameter.',
+ #                 filter = 'top', 
+ #                 extensions = 'Buttons',
+ #                 options = list(dom = 'Blfrtip',
+ #                                buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
+ #                                lengthMenu = list(c(10,25,50,-1),
+ #                                                  c(10,25,50,"All")))
+ #   )
+ # )
   
   
   
