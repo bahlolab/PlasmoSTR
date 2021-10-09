@@ -12,9 +12,9 @@ good_pv$Heterozygosity <- round(good_pv$Heterozygosity,3)
 good_pf <- read.csv("Data/Pf_STR_Top_Table.csv")
 good_pf$Heterozygosity <- round(good_pf$Heterozygosity,3)
 #Population or Country pairs
-compare_Pv_Country <- colnames(good_pv)[13:ncol(good_pv)]
-compare_Pf_Country <- colnames(good_pf)[41:ncol(good_pf)]
-compare_Pf_Population <- colnames(good_pf)[13:40]
+compare_Pv_Country <- colnames(good_pv)[14:ncol(good_pv)]
+compare_Pf_Country <- colnames(good_pf)[43:ncol(good_pf)]
+compare_Pf_Population <- colnames(good_pf)[15:42]
 #Plot data
 #Pf Population
 #Pf population loci plot
@@ -120,6 +120,9 @@ Pf_PCA$Population <- factor(Pf_PCA$Population,levels = c("CAF","EAF","WAF","SAM"
 Pv_PCA <- read.csv("Data/PCA_Pv.csv")
 #STR Pf3K Rshiny
 str_R <- read.csv("Data/STR_Pf3K_Rshiny.csv")
+#STR model parameter pf and pv
+Pf_model_parameter <- read.csv("Data/STR_Model_Parameter_Pf.csv")
+Pv_model_parameter <- read.csv("Data/STR_Model_Parameter_Pv.csv")
 
 #Define ui
 ui <- navbarPage(inverse = TRUE,
